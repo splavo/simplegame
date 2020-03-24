@@ -31,10 +31,6 @@ function setup() {
   startButton.style('font-size', '60px')
   startButton.style('border-radius', '5px')
   startButton.position(width/2 - 80, height/2 - 60);
-  fill(255)
-  textSize(30)
-  textAlign(CENTER)
-  text('try to catch the dot! it will get smaller as you go!',width/2,height - 80)
 
    p = new Player();
 
@@ -46,6 +42,19 @@ function setup() {
 
 function draw() {
   background(0);
+  if (!started) {
+    fill(255)
+    textSize(40)
+    textStyle(NORMAL)
+    textAlign(CENTER)
+    text('Try to catch the dots. They will get smaller as you go!',width/2, height - 270)
+
+    fill(255)
+    textSize(10)
+    textAlign(CENTER)
+    textStyle(ITALIC)
+    text('by Spencer Plavoukos', width/2, height - 20)
+  }
   startButton.mousePressed(function go() {
     started = true;
     startButton.hide();
